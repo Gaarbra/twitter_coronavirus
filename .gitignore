@@ -131,3 +131,6 @@ dmypy.json
 # vim
 *.swo 
 *.swp
+venv/
+nohup.out
+outputs/
