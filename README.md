@@ -1,19 +1,34 @@
 # Coronavirus Twitter Analysis
 
-I analyzed every geotagged tweet sent in 2020 (about 1.3 billion tweets) to see how coronavirus-related hashtags spread across languages and countries. I used the MapReduce approach so the work could run in parallel.
+I analyzed every geotagged tweet sent in 2020 to study how coronavirus-related hashtags were used across different languages and countries. I used a MapReduce workflow to process the large dataset in parallel.
 
-## How it works
-- `src/map.py` processes one day of tweets and counts each hashtag by language and by country. `run_maps.sh` launched all 366 days in parallel with `nohup`.
-- `src/reduce.py` adds the 366 daily results into one total for languages and one for countries.
-- `src/visualize.py` plots the top 10 languages or countries for a hashtag.
-- `src/alternative_reduce.py` plots how often hashtags were used on each day of the year.
+## How It Works
+
+- `src/map.py` processes tweets and counts hashtag usage by language and country.
+- `run_maps.sh` runs the mapper across the 2020 dataset in parallel using `nohup` and `&`.
+- `src/reduce.py` combines the daily results into overall language and country totals.
+- `src/visualize.py` creates bar graphs showing the top 10 languages or countries for each hashtag.
+- `src/alternative_reduce.py` creates a line graph showing hashtag usage throughout the year.
 
 ## Results
-![](plots/reduced.lang_coronavirus.png)
-![](plots/reduced.country_coronavirus.png)
-![](plots/reduced.lang_korean.png)
-![](plots/reduced.country_korean.png)
-![](plots/alternative_reduce.png)
 
-`#coronavirus` was used most in English (about 750,000 tweets) and from the United States (about 370,000). The Korean hashtag was almost only used in Korean and from South Korea, but in small numbers because few Korean users geotag their tweets.
+`#coronavirus` was used primarily in English and most frequently in tweets from the United States. The Korean hashtag `#코로나바이러스` was primarily associated with Korean-language tweets and South Korea.
+
+### #coronavirus by Language
+
+![Coronavirus by Language](plots/reduced.lang_coronavirus.png)
+
+### #coronavirus by Country
+
+![Coronavirus by Country](plots/reduced.country_coronavirus.png)
+
+### #코로나바이러스 by Language
+
+![Korean Coronavirus by Language](plots/reduced.lang_korean.png)
+
+### #코로나바이러스 by Country
+
+![Korean Coronavirus by Country](plots/reduced.country_korean.png)
+
+![](plots/alternative_reduce.png)
 
