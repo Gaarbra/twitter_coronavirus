@@ -30,5 +30,7 @@ I analyzed every geotagged tweet sent in 2020 to study how coronavirus-related h
 
 ![Coronavirus Korean by Language](plots/coronavirus_korean_language.png)
 
-![](plots/alternative_reduce.png)
+## Hashtag Usage Over Time
+
+![Hashtag Usage Over Time](plots/alternative_reduce.png)
 
