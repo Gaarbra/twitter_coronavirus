@@ -50,7 +50,7 @@ for number, name in top10:
 # make the bar graph
 plt.figure(figsize=(10,6))
 plt.bar(labels, values)
-plt.title(args.key)
+plt.title('Coronavirus (Korean)')
 plt.xlabel('language or country')
 if args.percent:
     plt.ylabel('fraction of tweets')

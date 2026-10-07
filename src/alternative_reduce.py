@@ -16,9 +16,6 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
-# use a font that can show Korean letters
-plt.rcParams['font.family'] = ['UnDotum', 'DejaVu Sans']
-
 # make an empty dictionary for each hashtag
 # counts['#coronavirus'][75] will be the number of tweets on day 75
 counts = {}
